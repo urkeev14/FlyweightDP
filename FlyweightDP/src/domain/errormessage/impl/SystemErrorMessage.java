@@ -10,6 +10,7 @@ import domain.errormessage.ErrorMessage;
 /**
  *
  * @author urosv
+ * Intrinsic class. Should be immutable.
  */
 public class SystemErrorMessage implements ErrorMessage {
 
@@ -27,16 +28,8 @@ public class SystemErrorMessage implements ErrorMessage {
         return messageTemplate.replace("$errorCode", code) + helpUrlBase + code;
     }
 
-    public void setMessageTemplate(String messageTemplate) {
-        this.messageTemplate = messageTemplate;
-    }
-
     public String getHelpUrlBase() {
         return helpUrlBase;
-    }
-
-    public void setHelpUrlBase(String helpUrlBase) {
-        this.helpUrlBase = helpUrlBase;
     }
 
 }
