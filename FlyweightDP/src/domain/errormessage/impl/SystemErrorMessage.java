@@ -14,7 +14,7 @@ import domain.errormessage.ErrorMessage;
  */
 public class SystemErrorMessage implements ErrorMessage {
 
-    //some error message $errorCode
+    //intrisic state properties
     private String messageTemplate;
     private String helpUrlBase;
 
@@ -25,11 +25,8 @@ public class SystemErrorMessage implements ErrorMessage {
     
     @Override
     public String getMessage(String code) {
+        //argument 'code' is extrinsic state 
         return messageTemplate.replace("$errorCode", code) + helpUrlBase + code;
-    }
-
-    public String getHelpUrlBase() {
-        return helpUrlBase;
     }
 
 }
